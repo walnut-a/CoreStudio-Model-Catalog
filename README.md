@@ -1,8 +1,17 @@
 # CoreStudio 模型目录
 
-这是 CoreStudio 使用的公开模型预制目录。客户端只会读取仓库根目录下的
-`model-catalog.v1.json`，经过本地严格校验后更新模型 ID、显示名称、能力参数和
-旧模型迁移关系。
+这是 CoreStudio 使用的公开模型预制目录。客户端读取对应版本的目录文件，
+经过本地严格校验后更新模型 ID、显示名称、能力参数和旧模型迁移关系。
+
+| 入口 | 使用方 | 当前目录 |
+| --- | --- | --- |
+| `model-catalog.v1.json` | 1.1.48 及以前 | revision 3，ZenMux 20 个图片预置 |
+| `model-catalog.current.v1.json` | 含新接口的 1.1.49 源码及后续版本 | revision 4，ZenMux 22 个图片预置 |
+
+新入口增加 Muse Image 1.0 与 Grok Imagine Image 2.0，使用
+`zenmux-openai-images` 接口。先开放单张生成、单张参考图编辑，不声明尚未验收
+的批量、种子、负面提示词等能力。旧目录文件保持不变，不向旧客户端下发它
+尚未编译支持的接口。此目录提交不代表 1.1.49 客户端已打包或发布。
 
 ## 安全边界
 
@@ -13,7 +22,8 @@
 
 ## 更新流程
 
-1. 修改 `model-catalog.v1.json`，并递增 `revision`。
+1. 修改对应版本的目录文件，并递增该入口的 `revision`；兼容旧客户端的更新
+   按需同步到旧入口，新接口不得写入旧入口。
 2. 更新 `publishedAt`；如使用了新客户端才支持的字段或接口类型，同时提高
    `minClientVersion`。
 3. 确认每个服务的 `defaultModel` 和 `modelAliases` 目标都存在于该服务的
