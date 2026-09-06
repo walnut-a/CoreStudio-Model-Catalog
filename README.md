@@ -18,7 +18,7 @@
    `minClientVersion`。
 3. 确认每个服务的 `defaultModel` 和 `modelAliases` 目标都存在于该服务的
    `models` 中。
-4. 提交到 `main` 后，在 CoreStudio 的“应用设置 → 图片集成 → 预置模型目录”中点击“检查更新”。
+4. 提交到 `main` 后，在 CoreStudio 的“应用设置 → 图片集成 → 模型目录”中点击“检查更新”。
 
 远程目录可以只覆盖部分服务商。未列出的服务继续使用随应用发布的内置目录。
 当前目录已覆盖 Gemini、ZenMux、fal.ai、即梦、OpenAI 和 OpenRouter 的全部固定
@@ -70,3 +70,8 @@ Muse Image 1.0 和 Grok Imagine Image 2.0 当前只出现在 OpenAI 兼容模型
 使用 CoreStudio 1.1.48 的真实目录解析、远程加载、能力归一化和缓存重载代码
 验证此文件，检查新增模型路由、单张限制、参考图能力、旧预置移除，并比较
 非 ZenMux 服务商、默认模型和迁移关系，确认未改变。
+
+发布后在 `1.1.48 / PACKAGED PREVIEW / 1aa95d2f5` 中，通过设置页“检查更新”
+从正式 GitHub 下载入口取得 revision 3；界面显示“已更新”，实际缓存含 20 个
+ZenMux 模型，下拉列表包含全部 8 个新增模型，Qwen Image 3.0 可正常选择。
+8 项目录契约与缓存服务定向测试通过。未配置测试 Key、未发起付费生成。
