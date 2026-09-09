@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": 4,
-  "publishedAt": "2026-09-06T10:19:57.558Z",
+  "revision": 5,
+  "publishedAt": "2026-09-09T06:30:00.000Z",
   "minClientVersion": "1.1.49",
   "modelAliases": {
     "zenmux": {
@@ -170,6 +170,34 @@
             "supportsReferenceImages": true,
             "maxImageCount": 10,
             "maxReferenceImageCount": 4,
+            "sizeControlMode": "aspect-ratio"
+          }
+        },
+        {
+          "id": "openai/gpt-image-2.5-flare",
+          "label": "GPT Image 2.5 Flare",
+          "adapter": "zenmux-openai-images",
+          "capabilities": {
+            "supportsNegativePrompt": false,
+            "supportsSeed": false,
+            "supportsImageCount": true,
+            "supportsReferenceImages": true,
+            "maxImageCount": 10,
+            "maxReferenceImageCount": 16,
+            "sizeControlMode": "aspect-ratio"
+          }
+        },
+        {
+          "id": "openai/gpt-image-2.5-sunburst",
+          "label": "GPT Image 2.5 Sunburst",
+          "adapter": "zenmux-openai-images",
+          "capabilities": {
+            "supportsNegativePrompt": false,
+            "supportsSeed": false,
+            "supportsImageCount": true,
+            "supportsReferenceImages": true,
+            "maxImageCount": 10,
+            "maxReferenceImageCount": 16,
             "sizeControlMode": "aspect-ratio"
           }
         },
@@ -535,6 +563,34 @@
             "supportsReferenceImages": true,
             "maxImageCount": 4,
             "maxReferenceImageCount": 4,
+            "sizeControlMode": "aspect-ratio"
+          }
+        },
+        {
+          "id": "gpt-image-2.5-flare",
+          "label": "GPT Image 2.5 Flare",
+          "adapter": "openai-images",
+          "capabilities": {
+            "supportsNegativePrompt": false,
+            "supportsSeed": false,
+            "supportsImageCount": true,
+            "supportsReferenceImages": true,
+            "maxImageCount": 10,
+            "maxReferenceImageCount": 16,
+            "sizeControlMode": "aspect-ratio"
+          }
+        },
+        {
+          "id": "gpt-image-2.5-sunburst",
+          "label": "GPT Image 2.5 Sunburst",
+          "adapter": "openai-images",
+          "capabilities": {
+            "supportsNegativePrompt": false,
+            "supportsSeed": false,
+            "supportsImageCount": true,
+            "supportsReferenceImages": true,
+            "maxImageCount": 10,
+            "maxReferenceImageCount": 16,
             "sizeControlMode": "aspect-ratio"
           }
         },

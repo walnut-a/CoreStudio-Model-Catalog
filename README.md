@@ -6,12 +6,20 @@
 | 入口 | 使用方 | 当前目录 |
 | --- | --- | --- |
 | `model-catalog.v1.json` | 1.1.48 及以前 | revision 3，ZenMux 20 个图片预置 |
-| `model-catalog.current.v1.json` | 含新接口的 1.1.49 源码及后续版本 | revision 4，ZenMux 22 个图片预置 |
+| `model-catalog.current.v1.json` | 含新接口的 1.1.49 源码及后续版本 | revision 5，ZenMux 24 个图片预置 |
 
-新入口增加 Muse Image 1.0 与 Grok Imagine Image 2.0，使用
-`zenmux-openai-images` 接口。先开放单张生成、单张参考图编辑，不声明尚未验收
-的批量、种子、负面提示词等能力。旧目录文件保持不变，不向旧客户端下发它
-尚未编译支持的接口。此目录提交不代表 1.1.49 客户端已打包或发布。
+新入口已增加 Muse Image 1.0、Grok Imagine Image 2.0、GPT Image 2.5 Flare
+与 GPT Image 2.5 Sunburst，使用 `zenmux-openai-images` 接口。GPT Image 2.5
+开放最多 10 张输出和 16 张参考图；质量档位、透明背景及扩展尺寸由支持这些
+字段的新版客户端按模型能力补齐。旧目录文件保持不变，不向旧客户端下发它
+尚未编译支持的接口。
+
+## 2026-09-09：GPT Image 2.5 目录 revision 5
+
+- ZenMux 新增 GPT Image 2.5 Flare 与 Sunburst，走 OpenAI Images 生成与编辑接口。
+- OpenAI 直连目录同步加入两个模型，避免远端完整目录覆盖内置模型后丢失条目。
+- 目录继续使用 schema v1 的既有字段；新版客户端按模型 ID 开放 `xhigh`、`max`、
+  透明背景及 2K/4K 预设，旧客户端仍可进行基础生成和参考图编辑。
 
 ## 安全边界
 
