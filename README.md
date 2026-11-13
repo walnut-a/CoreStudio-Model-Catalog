@@ -6,13 +6,34 @@
 | 入口 | 使用方 | 当前目录 |
 | --- | --- | --- |
 | `model-catalog.v1.json` | 1.1.48 及以前 | revision 3，ZenMux 20 个图片预置 |
-| `model-catalog.current.v1.json` | 含新接口的 1.1.49 源码及后续版本 | revision 5，ZenMux 24 个图片预置 |
+| `model-catalog.current.v1.json` | 本地待发布目录要求 1.1.61 及以后 | revision 6，共 73 个预置，ZenMux 34 个 |
 
 新入口已增加 Muse Image 1.0、Grok Imagine Image 2.0、GPT Image 2.5 Flare
 与 GPT Image 2.5 Sunburst，使用 `zenmux-openai-images` 接口。GPT Image 2.5
 开放最多 10 张输出和 16 张参考图；质量档位、透明背景及扩展尺寸由支持这些
 字段的新版客户端按模型能力补齐。旧目录文件保持不变，不向旧客户端下发它
 尚未编译支持的接口。
+
+## 2026-11-13：revision 6（本地待发布）
+
+与 CoreStudio 源码 `builtinModelCatalog.json` 统一，最低客户端版本为 1.1.61。
+新清单包含 Gemini 9、ZenMux 34、fal.ai 4、火山方舟 8、OpenAI 8、OpenRouter 10 个
+预置。加入 Nano Banana 2.1、Seedream 5 Flash / 5.5、GPT Image 2.6 等当前图片模型，
+核实各接口的模型 ID、协议、参考图和输出上限；OpenRouter 按实时模型列表移除
+不可用于当前聊天图片接口的旧预置。旧入口 revision 3 保持不动。
+
+这次以本地 Git 提交交付目录与客户端适配，不推送或发布。1.1.49～1.1.60 会拒绝 revision 6
+并继续使用其有效缓存；1.1.61 内置同版本目录且不会被低版本远端覆盖。
+未新增免费转付费迁移。未完成付费生图验收，未确认的能力按保守范围开放；
+未纳入视频、独立图层输出或需要新增协议的模型。
+
+实时核对来源：[ZenMux OpenAI](https://zenmux.ai/api/v1/models)、
+[ZenMux Vertex](https://zenmux.ai/api/vertex-ai/v1beta/models)、
+[OpenRouter](https://openrouter.ai/api/v1/models)、
+[Gemini](https://aistudio.google.com/docs/image-generation)、
+[OpenAI](https://developers.openai.com/api/docs/guides/image-generation)、
+[火山方舟](https://docs.volcengine.com/docs/ark/image-generation-tutorial?lang=zh&redirect=1)、
+[fal](https://fal.ai/models/google/nano-banana-2.1)。
 
 ## 2026-09-09：GPT Image 2.5 目录 revision 5
 
